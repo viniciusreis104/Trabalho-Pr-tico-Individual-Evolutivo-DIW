@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar título | CineMax</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/script.js" defer></script>
+</head>
+<body>
+
+  <header>
+      <a href="../index.html"><img src="../assets/img/logo.png" alt="Logotipo do CineMax" width="40" height="40"></a>
+      <p><strong>CineMax</strong></p>
+      <nav aria-label="Navegação principal">
+          <ul>
+             <li><a href="../index.html">Início</a></li>
+             <li><a href="../index.html#catalogo">Catálogo</a></li>
+             <li><a href="../index.html#minha-lista">Minha lista</a></li>
+             <li><a href="novo-titulo.html">Cadastrar título</a></li>
+             <li><a href="login.html">Entrar</a></li>
+             <li><a href="cadastro.html">Criar conta</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <main>
+      <section aria-labelledby="titulo-form">
+        <h1 id="titulo-form">Cadastrar filme ou série</h1>
+        <p>Use este mesmo formulário para editar um título já cadastrado.</p>
+
+        <form action="../index.html" method="get">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" name="titulo" required>
+
+          <fieldset>
+             <legend>Tipo</legend>
+             <label><input type="radio" name="tipo" value="filme" checked> Filme</label>
+             <label><input type="radio" name="tipo" value="serie"> Série</label>
+          </fieldset>
+
+          <label for="genero">Gênero</label>
+          <select id="genero" name="genero" required>
+             <option value="">Selecione</option>
+             <option value="acao">Ação</option>
+             <option value="comedia">Comédia</option>
+             <option value="drama">Drama</option>
+             <option value="ficcao">Ficção científica</option>
+             <option value="terror">Terror</option>
+          </select>
+
+          <label for="ano">Ano de lançamento</label>
+          <input type="number" id="ano" name="ano" min="1888" max="2100" required>
+
+          <label for="classificacao">Classificação indicativa</label>
+          <select id="classificacao" name="classificacao" required>
+             <option value="">Selecione</option>
+             <option value="L">Livre</option>
+             <option value="10">10 anos</option>
+             <option value="12">12 anos</option>
+             <option value="14">14 anos</option>
+             <option value="16">16 anos</option>
+             <option value="18">18 anos</option>
+          </select>
+
+          <label for="plataforma">Onde assistir</label>
+          <select id="plataforma" name="plataforma">
+             <option value="">Selecione</option>
+             <option value="netflix">Netflix</option>
+             <option value="prime">Prime Video</option>
+             <option value="max">Max</option>
+             <option value="disney">Disney+</option>
+          </select>
+
+          <label for="status">Situação</label>
+          <select id="status" name="status">
+             <option value="quero">Quero assistir</option>
+             <option value="assistindo">Assistindo</option>
+             <option value="assistido">Já assisti</option>
+          </select>
+
+          <label for="avaliacao">Avaliação (0 a 5)</label>
+          <input type="number" id="avaliacao" name="avaliacao" min="0" max="5" step="0.1">
+
+          <label for="poster">Endereço da imagem do pôster</label>
+          <input type="url" id="poster" name="poster" placeholder="https://...">
+
+          <label for="detalhes">Sinopse e detalhes</label>
+          <textarea id="detalhes" name="detalhes" rows="5"></textarea>
+
+          <button type="submit">Salvar título</button>
+          <button type="reset">Limpar</button>
+          <a href="../index.html">Cancelar</a>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+      <p>&copy; 2026 CineMax. Projeto acadêmico.</p>
+  </footer>
+
+</body>
+</html>
