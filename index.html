@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineMax: descubra e organize filmes e séries e veja onde assistir.">
     <title>Cinemax</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <header>
-       <nav>
+  <header>
+     <a href="index.html"><img src="assets/img/logo.png" alt="Logotipo do CineMax" width="40" height="40"></a>
+     <h1>CineMax</h1>
+     <p>Descubra, organize e saiba onde assistir.</p>
 
-       </nav> 
-    </header>
+     <nav aria-label="Navegação principal">
+        <ul>
+            
+        </ul>
+
+     </nav> 
+  </header>
                
     <main>
+
         <!--Pesquisa--> 
       <section id="pesquisa" aria-labelledby="titulo-pesquisa">
            <h2 id="titulo-pesquisa">O que você quer assistir hoje?</h2>
@@ -21,7 +32,79 @@
               <input type="search" id="busca" name="busca" placeholder="Ex.: Interestelar">
               <button type="submit">Pesquisar</button>
            </form>
-       </section>
+      </section>
+
+      <!--filtro e ordem-->
+      <section id="filtros" aria-labelledby="titulo-filtros">
+         <h2 id="titulo-filtros">Filtrar e ordenar</h2>
+         <form action="#" method="get">
+              <fieldset>
+                  <legend>Filtros</legend>
+
+                  <label for="filtro-tipo">Tipo</label>
+                  <select id="filtro-tipo" name="tipo">
+                     <option value="">Todos</option>
+                     <option value="filme">Filme</option>
+                     <option value="serie">Série</option>
+                  </select>
+
+                  <label for="filtro-genero">Gênero</label>
+                  <select id="filtro-genero" name="genero">
+                     <option value="">Todos</option>
+                     <option value="acao">Ação</option>
+                     <option value="comedia">Comédia</option>
+                     <option value="drama">Drama</option>
+                     <option value="ficcao">Ficção científica</option>
+                     <option value="terror">Terror</option>
+                  </select>
+
+                  <label for="filtro-plataforma">Onde assistir</label>
+                  <select id="filtro-plataforma" name="plataforma">
+                     <option value="">Todas</option>
+                     <option value="netflix">Netflix</option>
+                     <option value="prime">Prime Video</option>
+                     <option value="max">Max</option>
+                     <option value="disney">Disney+</option>
+                  </select>
+
+                  <label for="filtro-classificacao">Classificação indicativa</label>
+                  <select id="filtro-classificacao" name="classificacao">
+                     <option value="">Todas</option>
+                     <option value="L">Livre</option>
+                     <option value="10">10 anos</option>
+                     <option value="12">12 anos</option>
+                     <option value="14">14 anos</option>
+                     <option value="16">16 anos</option>
+                     <option value="18">18 anos</option>
+                  </select>
+
+                  <label for="filtro-status">Situação</label>
+                  <select id="filtro-status" name="status">
+                     <option value="">Todas</option>
+                     <option value="quero">Quero assistir</option>
+                     <option value="assistindo">Assistindo</option>
+                     <option value="assistido">Já assisti</option>
+                  </select>
+              </fieldset>
+
+               <fieldset>
+                 <legend>Ordenação</legend>
+                 <label for="ordenar">Ordenar por</label>
+                 <select id="ordenar" name="ordenar">
+                     <option value="titulo-az">Título (A–Z)</option>
+                     <option value="titulo-za">Título (Z–A)</option>
+                     <option value="ano-desc">Ano (mais recentes)</option>
+                     <option value="ano-asc">Ano (mais antigos)</option>
+                     <option value="nota-desc">Maior avaliação</option>
+                     <option value="nota-asc">Menor avaliação</option>
+                 </select>
+               </fieldset>
+
+               <button type="submit">Aplicar</button>
+               <button type="reset">Limpar filtros</button>
+         </form>
+      </section>
+
 
     </main>
 
