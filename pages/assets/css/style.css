@@ -762,6 +762,121 @@ main > aside ol li::marker {
 .detalhe .acoes { margin-top: var(--espaco-3); }
 
 
+/* =========================================================
+   8. RESPONSIVIDADE
+   ========================================================= */
+
+/* Tablets e telas médias */
+@media (max-width: 62rem) {   /* ≈ 992px */
+  main:has(#catalogo) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "pesquisa"
+      "filtros"
+      "catalogo"
+      "aside";
+    grid-template-rows: auto;
+  }
+
+  main > aside {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .slogan { display: none; }
+}
+
+/* Celulares */
+@media (max-width: 40rem) {   /* ≈ 640px */
+  main { padding: var(--espaco-3) var(--espaco-2); }
+
+  body > header {
+    padding-inline: var(--espaco-2);
+    position: static;           /* evita cabeçalho alto ocupando a tela */
+  }
+
+  /* Navegação ocupa a linha inteira, em grade de 2 colunas */
+  body > header nav {
+    flex: 1 1 100%;
+    margin-left: 0;
+  }
+
+  body > header nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+
+  body > header nav a {
+    text-align: center;
+    background: var(--cor-superficie-2);
+    border-radius: 0.5rem;
+  }
+
+  .painel { padding: var(--espaco-2); }
+
+  .form-titulo { grid-template-columns: minmax(0, 1fr); }
+
+  .form-pesquisa .btn { width: 100%; }
+
+  .catalogo-lista { grid-template-columns: minmax(0, 1fr); }
+
+  /* Card vira layout horizontal: pôster ao lado do texto */
+  .card {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    column-gap: var(--espaco-2);
+    align-content: start;
+  }
+
+  .card img {
+    grid-row: 1 / span 5;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .card > :not(img) { margin-inline: 0 var(--espaco-2); }
+  .card .acoes { grid-column: 1 / -1; margin-inline: var(--espaco-2); }
+
+  /* Detalhes em coluna única */
+  .detalhe {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--espaco-2);
+  }
+
+  .detalhe > img {
+    grid-column: 1;
+    grid-row: auto;
+    width: 11rem;
+    margin: 0 auto var(--espaco-2);
+  }
+
+  .detalhe > :not(img) { grid-column: 1; }
+
+  .detalhe dl { grid-template-columns: 1fr; gap: 0.15rem; }
+  .detalhe dd { margin-bottom: 0.5rem; }
+
+  /* Tabela com rolagem interna, sem estourar a página */
+  .detalhe table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .acoes .btn { flex: 1 1 100%; }
+
+  body > footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .card:hover,
+  .card:focus-within { transform: none; }
+}
 
 
 
