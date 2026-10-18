@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Criar conta | CineMax</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
   <header>
       <a href="../index.html"><img src="assets/img/logo.png" alt="Logotipo do CineMax" width="60" height="60"></a>
-      <p><strong>CineMax</strong></p>
+      <p class="marca"><strong>CineMax</strong></p>
       <nav aria-label="Navegação principal">
           <ul>
              <li><a href="../index.html">Início</a></li>
@@ -25,23 +25,34 @@
     </header>
 
   <main>
-    <section aria-labelledby="titulo-cadastro">
+    <section aria-labelledby="titulo-cadastro" class="painel painel-estreito">
       <h1 id="titulo-cadastro">Criar conta</h1>
+      <p class="mensagem mensagem-erro" role="alert" hidden>As senhas informadas não coincidem.</p>
       <form action="login.html" method="get">
-          <label for="cad-nome">Nome completo</label>
-          <input type="text" id="cad-nome" name="nome" autocomplete="name" required>
+          <div class="campo">
+            <label for="cad-nome">Nome completo</label>
+            <input type="text" id="cad-nome" name="nome" autocomplete="name" required>
+          </div>
 
-          <label for="cad-email">E-mail</label>
-          <input type="email" id="cad-email" name="email" autocomplete="email" required>
+          <div class="campo">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" name="email" autocomplete="email" required>
+          </div>
 
-          <label for="cad-nascimento">Data de nascimento</label>
-          <input type="date" id="cad-nascimento" name="nascimento" required>
+          <div class="campo">
+            <label for="cad-nascimento">Data de nascimento</label>
+            <input type="date" id="cad-nascimento" name="nascimento" required>
+          </div>
 
-          <label for="cad-senha">Senha (mínimo de 6 caracteres)</label>
-          <input type="password" id="cad-senha" name="senha" autocomplete="new-password" minlength="6" required>
+          <div class="campo">
+            <label for="cad-senha">Senha (mínimo de 6 caracteres)</label>
+            <input type="password" id="cad-senha" name="senha" autocomplete="new-password" minlength="6" required>
+          </div>
 
-          <label for="cad-confirma">Confirmar senha</label>
-          <input type="password" id="cad-confirma" name="confirma" autocomplete="new-password" minlength="6" required>
+          <div class="campo">
+            <label for="cad-confirma">Confirmar senha</label>
+            <input type="password" id="cad-confirma" name="confirma" autocomplete="new-password" minlength="6" required>
+          </div>
 
           <fieldset>
               <legend>Gêneros favoritos</legend>
@@ -54,7 +65,7 @@
 
           <label><input type="checkbox" name="termos" required> Li e aceito os termos de uso</label>
 
-          <button type="submit">Criar conta</button>
+          <button type="submit" class="btn btn-primario">Criar conta</button>
       </form>
       <p>Já tem conta? <a href="login.html">Entrar</a></p>
     </section>

@@ -11,7 +11,7 @@
 
   <header>
       <a href="../index.html"><img src="assets/img/logo.png" alt="Logotipo do CineMax" width="60" height="60"></a>
-      <p><strong>CineMax</strong></p>
+      <p class="marca"><strong>CineMax</strong></p>
       <nav aria-label="Navegação principal">
           <ul>
              <li><a href="../index.html">Início</a></li>
@@ -25,13 +25,17 @@
   </header>
 
   <main>
-      <section aria-labelledby="titulo-form">
+      <section aria-labelledby="titulo-form" class="painel">
         <h1 id="titulo-form">Cadastrar filme ou série</h1>
-        <p>Use este mesmo formulário para editar um título já cadastrado.</p>
+        <p class="mensagem mensagem-info">Use este mesmo formulário para editar um título já cadastrado.</p>
+        <p class="mensagem mensagem-sucesso" role="status" hidden>Título salvo com sucesso!</p>
+        <p class="mensagem mensagem-erro" role="alert" hidden>Não foi possível salvar. Verifique os campos obrigatórios.</p>
 
-        <form action="../index.html" method="get">
-          <label for="titulo">Título</label>
-          <input type="text" id="titulo" name="titulo" required>
+        <form action="../index.html" method="get" class="form-titulo">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" required>
+          </div>
 
           <fieldset>
              <legend>Tipo</legend>
@@ -39,8 +43,9 @@
              <label><input type="radio" name="tipo" value="serie"> Série</label>
           </fieldset>
 
-          <label for="genero">Gênero</label>
-          <select id="genero" name="genero" required>
+          <div class="campo">
+            <label for="genero">Gênero</label>
+            <select id="genero" name="genero" required>
              <option value="">Selecione</option>
              <option value="acao">Ação</option>
              <option value="comedia">Comédia</option>
@@ -48,12 +53,16 @@
              <option value="ficcao">Ficção científica</option>
              <option value="terror">Terror</option>
           </select>
+          </div>
 
-          <label for="ano">Ano de lançamento</label>
-          <input type="number" id="ano" name="ano" min="1888" max="2100" required>
+          <div class="campo">
+            <label for="ano">Ano de lançamento</label>
+            <input type="number" id="ano" name="ano" min="1888" max="2100" required>
+          </div>
 
-          <label for="classificacao">Classificação indicativa</label>
-          <select id="classificacao" name="classificacao" required>
+          <div class="campo">
+            <label for="classificacao">Classificação indicativa</label>
+            <select id="classificacao" name="classificacao" required>
              <option value="">Selecione</option>
              <option value="L">Livre</option>
              <option value="10">10 anos</option>
@@ -62,35 +71,48 @@
              <option value="16">16 anos</option>
              <option value="18">18 anos</option>
           </select>
+          </div>
 
-          <label for="plataforma">Onde assistir</label>
-          <select id="plataforma" name="plataforma">
+          <div class="campo">
+            <label for="plataforma">Onde assistir</label>
+            <select id="plataforma" name="plataforma">
              <option value="">Selecione</option>
              <option value="netflix">Netflix</option>
              <option value="prime">Prime Video</option>
              <option value="max">Max</option>
              <option value="disney">Disney+</option>
           </select>
+          </div>
 
-          <label for="status">Situação</label>
-          <select id="status" name="status">
+          <div class="campo">
+            <label for="status">Situação</label>
+            <select id="status" name="status">
              <option value="quero">Quero assistir</option>
              <option value="assistindo">Assistindo</option>
              <option value="assistido">Já assisti</option>
           </select>
+          </div>
 
-          <label for="avaliacao">Avaliação (0 a 5)</label>
-          <input type="number" id="avaliacao" name="avaliacao" min="0" max="5" step="0.1">
+          <div class="campo">
+            <label for="avaliacao">Avaliação (0 a 5)</label>
+            <input type="number" id="avaliacao" name="avaliacao" min="0" max="5" step="0.1">
+          </div>
 
-          <label for="poster">Endereço da imagem do pôster</label>
-          <input type="url" id="poster" name="poster" placeholder="https://...">
+          <div class="campo">
+            <label for="poster">Endereço da imagem do pôster</label>
+            <input type="url" id="poster" name="poster" placeholder="https://...">
+          </div>
 
-          <label for="detalhes">Sinopse e detalhes</label>
-          <textarea id="detalhes" name="detalhes" rows="5"></textarea>
+          <div class="campo">
+            <label for="detalhes">Sinopse e detalhes</label>
+            <textarea id="detalhes" name="detalhes" rows="5"></textarea>
+          </div>
 
-          <button type="submit">Salvar título</button>
-          <button type="reset">Limpar</button>
-          <a href="../index.html">Cancelar</a>
+          <div class="acoes">
+            <button type="submit" class="btn btn-primario">Salvar título</button>
+            <button type="reset" class="btn btn-secundario">Limpar</button>
+            <a href="../index.html" class="btn btn-fantasma">Cancelar</a>
+          </div>
       </form>
     </section>
 

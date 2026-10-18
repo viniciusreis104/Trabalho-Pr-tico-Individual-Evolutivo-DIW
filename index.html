@@ -11,8 +11,8 @@
 <body>
   <header>
      <a href="index.html"><img src= "pages/assets/img/logo.png" alt="Logotipo do CineMax" width="60" height="60"></a>
-     <h1>CineMax</h1>
-     <p>Descubra, organize e saiba onde assistir.</p>
+     <h1 class="marca">CineMax</h1>
+     <p class="slogan">Descubra, organize e saiba onde assistir.</p>
 
      <nav aria-label="Navegação principal">
         <ul>
@@ -32,29 +32,34 @@
         <!--Pesquisa--> 
       <section id="pesquisa" aria-labelledby="titulo-pesquisa">
            <h2 id="titulo-pesquisa">O que você quer assistir hoje?</h2>
-           <form role="search" action="#" method="get">
-              <label for="busca">Pesquisar por título, ator ou diretor</label>
-              <input type="search" id="busca" name="busca" placeholder="Ex.: Interestelar">
-              <button type="submit">Pesquisar</button>
+           <form role="search" action="#" method="get" class="form-pesquisa">
+              <div class="campo">
+                <label for="busca">Pesquisar por título, ator ou diretor</label>
+                <input type="search" id="busca" name="busca" placeholder="Ex.: Interestelar">
+              </div>
+              <button type="submit" class="btn btn-primario">Pesquisar</button>
            </form>
       </section>
 
       <!--filtro e ordem-->
       <section id="filtros" aria-labelledby="titulo-filtros">
          <h2 id="titulo-filtros">Filtrar e ordenar</h2>
-         <form action="#" method="get">
+         <form action="#" method="get" class="form-filtros">
               <fieldset>
                   <legend>Filtros</legend>
 
-                  <label for="filtro-tipo">Tipo</label>
-                  <select id="filtro-tipo" name="tipo">
+                  <div class="campo">
+                    <label for="filtro-tipo">Tipo</label>
+                    <select id="filtro-tipo" name="tipo">
                      <option value="">Todos</option>
                      <option value="filme">Filme</option>
                      <option value="serie">Série</option>
                   </select>
+                  </div>
 
-                  <label for="filtro-genero">Gênero</label>
-                  <select id="filtro-genero" name="genero">
+                  <div class="campo">
+                    <label for="filtro-genero">Gênero</label>
+                    <select id="filtro-genero" name="genero">
                      <option value="">Todos</option>
                      <option value="acao">Ação</option>
                      <option value="comedia">Comédia</option>
@@ -62,18 +67,22 @@
                      <option value="ficcao">Ficção científica</option>
                      <option value="terror">Terror</option>
                   </select>
+                  </div>
 
-                  <label for="filtro-plataforma">Onde assistir</label>
-                  <select id="filtro-plataforma" name="plataforma">
+                  <div class="campo">
+                    <label for="filtro-plataforma">Onde assistir</label>
+                    <select id="filtro-plataforma" name="plataforma">
                      <option value="">Todas</option>
                      <option value="netflix">Netflix</option>
                      <option value="prime">Prime Video</option>
                      <option value="max">Max</option>
                      <option value="disney">Disney+</option>
                   </select>
+                  </div>
 
-                  <label for="filtro-classificacao">Classificação indicativa</label>
-                  <select id="filtro-classificacao" name="classificacao">
+                  <div class="campo">
+                    <label for="filtro-classificacao">Classificação indicativa</label>
+                    <select id="filtro-classificacao" name="classificacao">
                      <option value="">Todas</option>
                      <option value="L">Livre</option>
                      <option value="10">10 anos</option>
@@ -82,20 +91,24 @@
                      <option value="16">16 anos</option>
                      <option value="18">18 anos</option>
                   </select>
+                  </div>
 
-                  <label for="filtro-status">Situação</label>
-                  <select id="filtro-status" name="status">
+                  <div class="campo">
+                    <label for="filtro-status">Situação</label>
+                    <select id="filtro-status" name="status">
                      <option value="">Todas</option>
                      <option value="quero">Quero assistir</option>
                      <option value="assistindo">Assistindo</option>
                      <option value="assistido">Já assisti</option>
                   </select>
+                  </div>
               </fieldset>
 
                <fieldset>
                  <legend>Ordenação</legend>
-                 <label for="ordenar">Ordenar por</label>
-                 <select id="ordenar" name="ordenar">
+                 <div class="campo">
+                   <label for="ordenar">Ordenar por</label>
+                   <select id="ordenar" name="ordenar">
                      <option value="titulo-az">Título (A–Z)</option>
                      <option value="titulo-za">Título (Z–A)</option>
                      <option value="ano-desc">Ano (mais recentes)</option>
@@ -103,10 +116,13 @@
                      <option value="nota-desc">Maior avaliação</option>
                      <option value="nota-asc">Menor avaliação</option>
                  </select>
+                 </div>
                </fieldset>
 
-               <button type="submit">Aplicar</button>
-               <button type="reset">Limpar filtros</button>
+               <div class="acoes">
+                  <button type="submit" class="btn btn-primario">Aplicar</button>
+                  <button type="reset" class="btn btn-secundario">Limpar filtros</button>
+               </div>
          </form>
       </section>
       
@@ -114,48 +130,55 @@
       <!--Catálogo de filmes-->
       <section id="catalogo" aria-labelledby="titulo-catalogo">
           <h2 id="titulo-catalogo">Catálogo</h2>
-          <p>Exibindo 3 títulos.</p>
+          <p class="mensagem mensagem-info" role="status">Exibindo 3 títulos.</p>
+          <p class="mensagem mensagem-vazio" hidden>Nenhum título encontrado. Tente ajustar a pesquisa ou limpar os filtros.</p>
 
-         <ul>
+         <ul class="catalogo-lista">
              <li>
-                 <article>
+                 <article class="card">
                      <img src="pages/assets/img/interestelar-poster.jpg" alt="Pôster do filme Interestelar" width="200" height="300">
                      <h3>Interestelar</h3>
                      <p>Filme • Ficção científica • 2014</p>
                      <p>Classificação: 10 anos</p>
                      <p>Avaliação: <strong>4,7</strong> de 5</p>
-                     <p>Situação: Já assisti</p>
-                     <a href="pages/detalhes.html#interestelar">Ver detalhes</a>
-                     <a href="pages/novo-titulo.html">Editar</a>
-                     <button type="button">Excluir</button>
+                     <p>Situação: <span class="selo selo-assistido">Já assisti</span></p>
+                     <div class="acoes">
+                       <a href="pages/detalhes.html#interestelar" class="btn btn-primario">Ver detalhes</a>
+                       <a href="pages/novo-titulo.html" class="btn btn-secundario">Editar</a>
+                       <button type="button" class="btn btn-perigo">Excluir</button>
+                     </div>
                  </article>
              </li>
 
              <li>
-                 <article>
+                 <article class="card">
                      <img src="pages/assets/img/stranger-things-poster.jpg" alt="Pôster da série Stranger Things" width="200" height="300">
                      <h3>Stranger Things</h3>
                      <p>Série • Ficção científica • 2016</p>
                      <p>Classificação: 14 anos</p>
                      <p>Avaliação: <strong>4,5</strong> de 5</p>
-                     <p>Situação: Assistindo</p>
-                     <a href="pages/detalhes.html#stranger-things">Ver detalhes</a>
-                     <a href="pages/novo-titulo.html">Editar</a>
-                     <button type="button">Excluir</button>
+                     <p>Situação: <span class="selo selo-assistindo">Assistindo</span></p>
+                     <div class="acoes">
+                       <a href="pages/detalhes.html#stranger-things" class="btn btn-primario">Ver detalhes</a>
+                       <a href="pages/novo-titulo.html" class="btn btn-secundario">Editar</a>
+                       <button type="button" class="btn btn-perigo">Excluir</button>
+                     </div>
                  </article>
              </li>
 
              <li>
-                  <article>
+                  <article class="card">
                      <img src="pages/assets/img/parasita-poster.jpg" alt="Pôster do filme Parasita" width="200" height="300">
                      <h3>Parasita</h3>
                      <p>Filme • Drama • 2019</p>
                      <p>Classificação: 16 anos</p>
                      <p>Avaliação: <strong>4,8</strong> de 5</p>
-                     <p>Situação: Quero assistir</p>
-                     <a href="pages/detalhes.html#parasita">Ver detalhes</a>
-                     <a href="pages/novo-titulo.html">Editar</a>
-                     <button type="button">Excluir</button>
+                     <p>Situação: <span class="selo selo-quero">Quero assistir</span></p>
+                     <div class="acoes">
+                       <a href="pages/detalhes.html#parasita" class="btn btn-primario">Ver detalhes</a>
+                       <a href="pages/novo-titulo.html" class="btn btn-secundario">Editar</a>
+                       <button type="button" class="btn btn-perigo">Excluir</button>
+                     </div>
                   </article>
              </li>
          </ul>
@@ -166,8 +189,8 @@
             <section id="minha-lista" aria-labelledby="titulo-minha-lista">
                 <h2 id="titulo-minha-lista">Minha lista</h2>
                 <ul>
-                    <li><a href="pages/detalhes.html#parasita">Parasita</a> — Quero assistir</li>
-                    <li><a href="pages/detalhes.html#stranger-things">Stranger Things</a> — Assistindo</li>
+                    <li><a href="pages/detalhes.html#parasita">Parasita</a> <span class="selo selo-quero">Quero assistir</span></li>
+                    <li><a href="pages/detalhes.html#stranger-things">Stranger Things</a> <span class="selo selo-assistindo">Assistindo</span></li>
                 </ul>
             </section>
 

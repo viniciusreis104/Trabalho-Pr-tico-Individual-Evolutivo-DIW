@@ -11,7 +11,7 @@
 
    <header>
        <a href="../index.html"><img src="assets/img/logo.png" alt="Logotipo do CineMax" width="40" height="40"></a>
-       <p><strong>CineMax</strong></p>
+       <p class="marca"><strong>CineMax</strong></p>
        <nav aria-label="Navegação principal">
           <ul>
              <li><a href="../index.html">Início</a></li>
@@ -26,9 +26,9 @@
 
   <main>
       <section aria-labelledby="titulo-detalhes">
-          <p><a href="../index.html#catalogo">&larr; Voltar ao catálogo</a></p>
+          <p class="voltar"><a href="../index.html#catalogo">&larr; Voltar ao catálogo</a></p>
 
-          <article>
+          <article id="interestelar" class="detalhe">
              <img src="assets/img/interestelar.jpg" alt="Pôster do filme Interestelar" width="240" height="360">
              <h1 id="titulo-detalhes">Interestelar</h1>
              <p>Filme • 2014 • 2h 49min</p>
@@ -45,7 +45,7 @@
                  <dt>Avaliação</dt>
                  <dd>4,7 de 5</dd>
                  <dt>Situação</dt>
-                 <dd>Já assisti</dd>
+                 <dd><span class="selo selo-assistido">Já assisti</span></dd>
              </dl>
 
              <h2>Onde assistir</h2>
@@ -72,12 +72,14 @@
                  </tbody>
               </table>
 
-             <a href="novo-titulo.html">Editar</a>
-             <button type="button">Excluir</button>
-             <button type="button">Adicionar à minha lista</button>
+             <div class="acoes">
+               <a href="novo-titulo.html" class="btn btn-secundario">Editar</a>
+               <button type="button" class="btn btn-perigo">Excluir</button>
+               <button type="button" class="btn btn-primario">Adicionar à minha lista</button>
+             </div>
            </article>
 
-           <article id="stranger-things">
+           <article id="stranger-things" class="detalhe">
                <img src="assets/img/stranger-things.jpg" alt="Pôster da série Stranger Things" width="240" height="360">
                <h2>Stranger Things</h2>
                <p>Série • 2016</p>
@@ -94,7 +96,7 @@
                   <dt>Avaliação</dt>
                   <dd>4,5 de 5</dd>
                   <dt>Situação</dt>
-                  <dd>Assistindo</dd>
+                  <dd><span class="selo selo-assistindo">Assistindo</span></dd>
                </dl>
 
                <h3>Onde assistir</h3>
@@ -116,12 +118,14 @@
                  </tbody>
                </table>
 
-               <a href="novo-titulo.html">Editar</a>
-               <button type="button">Excluir</button>
-               <button type="button">Adicionar à minha lista</button>
+               <div class="acoes">
+                 <a href="novo-titulo.html" class="btn btn-secundario">Editar</a>
+                 <button type="button" class="btn btn-perigo">Excluir</button>
+                 <button type="button" class="btn btn-primario">Adicionar à minha lista</button>
+               </div>
            </article>
 
-           <article id="parasita">
+           <article id="parasita" class="detalhe">
                <img src="assets/img/parasita.jpg" alt="Pôster do filme Parasita" width="240" height="360">
                <h2>Parasita</h2>
                <p>Filme • 2019 • 2h 12min</p>
@@ -138,7 +142,7 @@
                   <dt>Avaliação</dt>
                   <dd>4,8 de 5</dd>
                   <dt>Situação</dt>
-                  <dd>Quero assistir</dd>
+                  <dd><span class="selo selo-quero">Quero assistir</span></dd>
                </dl>
 
                <h3>Onde assistir</h3>
@@ -165,9 +169,11 @@
                    </tbody>
                </table>
 
-               <a href="novo-titulo.html">Editar</a>
-               <button type="button">Excluir</button>
-               <button type="button">Adicionar à minha lista</button>
+               <div class="acoes">
+                 <a href="novo-titulo.html" class="btn btn-secundario">Editar</a>
+                 <button type="button" class="btn btn-perigo">Excluir</button>
+                 <button type="button" class="btn btn-primario">Adicionar à minha lista</button>
+               </div>
             </article>
         </section>
   </main>
