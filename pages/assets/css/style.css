@@ -533,5 +533,140 @@ input[type="radio"] {
 
 #filtros h2 { font-size: 1.2rem; }
 
+/* =========================================================
+   6. LISTAGEM DE TÍTULOS E ASIDE
+   ========================================================= */
+
+/* Página inicial: CSS Grid com áreas nomeadas */
+main:has(#catalogo) {
+  display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  grid-template-areas:
+    "pesquisa pesquisa"
+    "filtros  catalogo"
+    "aside    catalogo";
+  grid-template-rows: auto auto 1fr;
+  gap: var(--espaco-3);
+}
+
+#pesquisa { grid-area: pesquisa; }
+#filtros  { grid-area: filtros; align-self: start; }
+#catalogo { grid-area: catalogo; }
+main > aside {
+  grid-area: aside;
+  display: grid;
+  gap: var(--espaco-3);
+  align-content: start;
+}
+
+/* Lista de cards: Grid responsivo */
+.catalogo-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: var(--espaco-3);
+  list-style: none;
+}
+
+.catalogo-lista > li { display: flex; }
+
+/* Card do título */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--cor-destaque);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--cor-superficie-2);
+}
+
+.card > :not(img) { margin-inline: var(--espaco-2); }
+
+.card h3 {
+  margin-top: var(--espaco-2);
+  margin-bottom: 0.25rem;
+}
+
+.card p {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Primeiro parágrafo (tipo • gênero • ano) em destaque */
+.card h3 + p { color: var(--cor-texto); }
+
+.card strong { color: var(--cor-destaque); font-size: 1.05rem; }
+
+.card .acoes {
+  margin-top: auto;               /* empurra as ações para o rodapé do card */
+  padding-top: var(--espaco-2);
+  margin-bottom: var(--espaco-2);
+}
+
+.card .acoes .btn-primario { flex: 1 1 100%; }
+.card .acoes .btn-secundario,
+.card .acoes .btn-perigo { flex: 1 1 0; }
+
+/* Aside: minha lista e em alta */
+main > aside section {
+  padding: var(--espaco-3);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+main > aside h2 {
+  font-size: 1.15rem;
+  padding-bottom: var(--espaco-1);
+  border-bottom: 2px solid var(--cor-destaque);
+}
+
+main > aside ul {
+  display: grid;
+  gap: var(--espaco-1);
+  list-style: none;
+}
+
+main > aside li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 0.5rem;
+}
+
+main > aside ol { padding-left: 1.5rem; }
+
+main > aside ol li {
+  display: list-item;          /* mantém a numeração visível */
+  margin-bottom: 0.35rem;
+  padding-left: 0.25rem;
+}
+
+main > aside ol li::marker {
+  color: var(--cor-destaque);
+  font-weight: 700;
+}
+
+#catalogo > h2 { margin-bottom: var(--espaco-1); }
+
+
+
 
 
