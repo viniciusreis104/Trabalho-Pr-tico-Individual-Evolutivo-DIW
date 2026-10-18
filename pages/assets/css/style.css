@@ -324,4 +324,171 @@ body > footer ul {
 /* O atributo hidden deve vencer o display definido acima */
 [hidden] { display: none !important; }
 
+/* =========================================================
+   4. FORMULÁRIOS
+   ========================================================= */
+
+/* Painel central (login, cadastro, novo título) */
+.painel {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: var(--espaco-4);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.painel-estreito { max-width: 28rem; }
+
+.painel form {
+  display: grid;
+  gap: var(--espaco-2);
+}
+
+.painel > p { color: var(--cor-texto-suave); }
+.painel > p.mensagem { color: var(--cor-texto); }
+
+/* Campo = rótulo + controle */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.8rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8d94a8;
+  opacity: 1;
+}
+
+input[type="date"],
+select { color-scheme: dark; }
+
+/* Estados de interação dos controles */
+input:hover,
+select:hover,
+textarea:hover { border-color: var(--cor-texto-suave); }
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cor-foco);
+  box-shadow: 0 0 0 4px rgb(94 194 255 / 0.3);
+}
+
+/* Validação — só depois que o usuário interage com o campo */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid { border-color: var(--cor-perigo); }
+
+input:user-valid,
+textarea:user-valid { border-color: var(--cor-sucesso); }
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Campos obrigatórios sinalizados com asterisco no rótulo */
+.campo:has(:required) > label::after {
+  content: " *";
+  color: var(--cor-destaque);
+}
+
+/* Grupos de opções (radio / checkbox) */
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--espaco-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+}
+
+fieldset > label,
+form > label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.5rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  accent-color: var(--cor-destaque);
+  cursor: pointer;
+}
+
+/* Fieldsets de opções lado a lado (Flexbox) */
+.painel fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+/* Formulário de novo título: CSS Grid em 2 colunas */
+.form-titulo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espaco-2) var(--espaco-3);
+}
+
+.form-titulo fieldset,
+.form-titulo .campo:has(#titulo),
+.form-titulo .campo:has(textarea),
+.form-titulo .campo:has(#poster),
+.form-titulo .acoes {
+  grid-column: 1 / -1;
+}
+
+.painel form > .acoes { margin-top: var(--espaco-1); }
+
+/* Login e cadastro: botão ocupa a largura toda */
+.painel-estreito form > .btn { width: 100%; }
+
+
 
