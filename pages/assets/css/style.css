@@ -490,5 +490,48 @@ input[type="radio"] {
 /* Login e cadastro: botão ocupa a largura toda */
 .painel-estreito form > .btn { width: 100%; }
 
+/* =========================================================
+   5. PESQUISA, FILTROS E ORDENAÇÃO
+   ========================================================= */
+#pesquisa,
+#filtros {
+  padding: var(--espaco-3);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+#pesquisa {
+  background:
+    linear-gradient(135deg, rgb(245 179 1 / 0.14), transparent 60%),
+    var(--cor-superficie);
+}
+
+#pesquisa h2 { font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem); }
+
+/* Barra de pesquisa: Flexbox (campo cresce, botão fixo) */
+.form-pesquisa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--espaco-1);
+}
+
+.form-pesquisa .campo { flex: 1 1 16rem; }
+
+/* Filtros: Grid fluido (auto-fit) */
+.form-filtros {
+  display: grid;
+  gap: var(--espaco-2);
+}
+
+.form-filtros fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--espaco-2);
+}
+
+#filtros h2 { font-size: 1.2rem; }
+
 
 
