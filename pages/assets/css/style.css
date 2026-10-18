@@ -666,6 +666,101 @@ main > aside ol li::marker {
 
 #catalogo > h2 { margin-bottom: var(--espaco-1); }
 
+/* =========================================================
+   7. DETALHES DO TÍTULO
+   ========================================================= */
+.voltar { margin-bottom: var(--espaco-3); }
+
+.voltar a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
+
+.detalhe {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);   /* pôster | conteúdo */
+  column-gap: var(--espaco-4);
+  align-items: start;
+  margin-bottom: var(--espaco-4);
+  padding: var(--espaco-4);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  scroll-margin-top: 7rem;      /* âncoras não ficam sob o cabeçalho fixo */
+}
+
+.detalhe > img {
+  grid-column: 1;
+  grid-row: 1 / span 12;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: var(--sombra);
+}
+
+.detalhe > :not(img) { grid-column: 2; }
+
+.detalhe > img + :is(h1, h2) { margin-bottom: 0.25rem; }
+
+.detalhe > img + :is(h1, h2) + p { color: var(--cor-texto-suave); }
+
+.detalhe :is(h2, h3) {
+  margin-top: var(--espaco-2);
+  font-size: 1.1rem;
+  color: var(--cor-destaque);
+}
+
+.detalhe > img + :is(h1, h2) {
+  margin-top: 0;
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.25rem);
+  color: var(--cor-texto);
+}
+
+/* Lista de informações: Grid de duas colunas */
+.detalhe dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem var(--espaco-3);
+  margin: 0 0 var(--espaco-2);
+  padding: var(--espaco-2);
+  background: var(--cor-superficie-2);
+  border-radius: 0.5rem;
+}
+
+.detalhe dt { color: var(--cor-texto-suave); font-weight: 600; }
+.detalhe dd { margin: 0; }
+
+/* Tabela de plataformas */
+.detalhe table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.detalhe caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.detalhe th,
+.detalhe td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.detalhe thead th {
+  background: var(--cor-superficie-2);
+  color: var(--cor-texto);
+}
+
+.detalhe tbody tr:hover { background: rgb(255 255 255 / 0.04); }
+
+.detalhe .acoes { margin-top: var(--espaco-3); }
+
 
 
 
