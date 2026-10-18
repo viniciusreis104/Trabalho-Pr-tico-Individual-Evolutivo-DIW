@@ -205,4 +205,123 @@ body > footer ul {
   list-style: none;
 }
 
+/* =========================================================
+   3. COMPONENTES: BOTÕES, SELOS E MENSAGENS
+   ========================================================= */
+
+/* Grupo de ações (Flexbox) */
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  margin-top: var(--espaco-2);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;               /* alvo de toque confortável */
+  padding: 0.5rem 1.1rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primario {
+  background: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+}
+.btn-primario:hover {
+  background: #ffd45c;
+  color: var(--cor-sobre-destaque);
+}
+
+.btn-secundario {
+  background: transparent;
+  border-color: var(--cor-borda);
+  color: var(--cor-texto);
+}
+.btn-secundario:hover {
+  background: var(--cor-superficie-2);
+  border-color: var(--cor-texto-suave);
+  color: var(--cor-texto);
+}
+
+.btn-fantasma {
+  background: transparent;
+  color: var(--cor-texto-suave);
+  text-decoration: underline;
+}
+.btn-fantasma:hover { color: var(--cor-texto); }
+
+/* Ação de exclusão */
+.btn-perigo {
+  background: transparent;
+  border-color: var(--cor-perigo);
+  color: var(--cor-perigo);
+}
+.btn-perigo:hover,
+.btn-perigo:focus-visible {
+  background: var(--cor-perigo-forte);
+  border-color: var(--cor-perigo-forte);
+  color: #fff;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Selos de situação */
+.selo {
+  display: inline-block;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.selo-quero      { background: #26346a; color: #d3e2ff; }
+.selo-assistindo { background: #5c4400; color: #ffe49a; }
+.selo-assistido  { background: #1b4a2d; color: #bdf2cd; }
+
+/* Mensagens e estados do sistema */
+.mensagem {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--cor-borda);
+  border-left-width: 5px;
+  border-radius: 0.5rem;
+  background: var(--cor-superficie-2);
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+.mensagem-info    { border-left-color: var(--cor-info); }
+.mensagem-sucesso { border-left-color: var(--cor-sucesso); }
+.mensagem-erro    { border-left-color: var(--cor-perigo); }
+
+/* Estado vazio (nenhum resultado) */
+.mensagem-vazio {
+  padding: var(--espaco-4) var(--espaco-2);
+  border-style: dashed;
+  border-left-width: 1px;
+  text-align: center;
+  color: var(--cor-texto-suave);
+}
+
+/* O atributo hidden deve vencer o display definido acima */
+[hidden] { display: none !important; }
+
 
