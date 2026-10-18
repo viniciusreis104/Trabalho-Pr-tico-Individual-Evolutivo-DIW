@@ -87,3 +87,122 @@ img {
   border-radius: 0.25rem;
 }
 
+/* =========================================================
+   2. LAYOUT BASE
+   ========================================================= */
+
+/* Cabeçalho: Flexbox (logo + marca + slogan + navegação) */
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-1) var(--espaco-2);
+  padding: var(--espaco-2) max(var(--espaco-3), calc((100% - var(--largura-max)) / 2));
+  background: var(--cor-superficie);
+  border-bottom: 3px solid var(--cor-destaque);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+body > header > a:first-child {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+body > header img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.marca {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--cor-destaque);
+}
+
+.slogan {
+  margin: 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+}
+
+/* Navegação: Flexbox empurrada para a direita */
+body > header nav { margin-left: auto; }
+
+body > header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+body > header nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+body > header nav a:hover {
+  background: var(--cor-superficie-2);
+  color: var(--cor-destaque);
+}
+
+body > header nav a:active { transform: translateY(1px); }
+
+/* Itens de ação (Entrar / Criar conta) em destaque */
+body > header nav li:nth-last-child(-n + 2) a {
+  border: 1px solid var(--cor-borda);
+}
+
+body > header nav li:last-child a {
+  background: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+}
+
+body > header nav li:last-child a:hover {
+  background: #ffd45c;
+  color: var(--cor-sobre-destaque);
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-4) var(--espaco-3);
+}
+
+/* Rodapé: Flexbox com quebra */
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-1) var(--espaco-3);
+  padding: var(--espaco-3) max(var(--espaco-3), calc((100% - var(--largura-max)) / 2));
+  background: var(--cor-superficie);
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+body > footer p { margin: 0; }
+
+body > footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  list-style: none;
+}
+
+
